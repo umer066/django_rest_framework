@@ -20,6 +20,6 @@ if auth_response.status_code == 200:
 
     get_response = requests.get(endpoint, headers=headers)        # HTTP REQUEST to get endpoint
     print(get_response.json()) 
-else:
-    print("Authentication failed!")
+# else:
+#     print("Authentication failed!")
      
