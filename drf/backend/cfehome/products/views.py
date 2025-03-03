@@ -7,9 +7,10 @@ from .serializers import ProductSerializer
 from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404 
 
-from api.mixins import StaffEditorPermissionMixin
+from api.mixins import (StaffEditorPermissionMixin, UserQuerySetMixin)
 
 class ProductListCreateAPIView(
+    UserQuerySetMixin,
     StaffEditorPermissionMixin,
     generics.ListCreateAPIView,
     ):
@@ -27,10 +28,17 @@ class ProductListCreateAPIView(
         if content is None:
             content = title
         serializer.save(content=content)
+    
+    # def get_queryset(self, *args, **kwargs):
+    #     request = self.request  
+    #     print (request.user)
+    #     return super().get_queryset()
+    
 
 product_list_create_view = ProductListCreateAPIView.as_view()
 
 class ProductDetailAPIView(
+    UserQuerySetMixin,
     StaffEditorPermissionMixin,
     generics.RetrieveAPIView,
     ):
@@ -106,6 +114,7 @@ def product_alt_view(request, pk=None, *args, **kwargs):
         
 
 class ProductUpdateAPIView(
+    UserQuerySetMixin,
     StaffEditorPermissionMixin,
     generics.UpdateAPIView,
     ):
@@ -124,6 +133,7 @@ product_update_view = ProductUpdateAPIView.as_view()
 
 
 class ProductDestroyAPIView(
+    UserQuerySetMixin,
     StaffEditorPermissionMixin, 
     generics.DestroyAPIView,
     ):
