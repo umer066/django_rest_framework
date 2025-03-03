@@ -1,4 +1,4 @@
-from rest_framework import mixins, viewsets
+from rest_framework import viewsets, mixins
 
 from .models import Product
 from .serializers import ProductSerializer
@@ -7,7 +7,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     """
     get -> list -> Queryset
     get -> retrieve -> Product Instance Detail View
-    post -> create -> New Instance
+    post -> create -> New Instances
     put -> Upgrade / update
     patch -> Partial Update
     delete -> destroy 
