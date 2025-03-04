@@ -146,4 +146,15 @@ REST_FRAMEWORK = {
         # "rest_framework.permissions.IsAdminUser",  # Only admin users can access
         # "products.permissions.IsStaffEditorPermission",  # Custom permission class
     ],
+
+     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+     'PAGE_SIZE': 10,
+     'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
+        },
+
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),   
 }
