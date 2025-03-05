@@ -4,10 +4,20 @@ from .models import Product
 from . import validators
 from api.serializers import UserPublicSerializer
 
+class ProductInlineSerializer(serializers.Serializer):
+     url = serializers.HyperlinkedIdentityField(
+         view_name = 'product-detail',
+         lookup_field = 'pk',
+         read_only = True
+     )
+    
+     title = serializers.CharField(read_only = True)
+
 class ProductSerializer(serializers.ModelSerializer):
     owner = UserPublicSerializer(source ='user', read_only = True)
+    # related_products = ProductInlineSerializer(source = 'user.product_set.all', read_only = True, many = True)
     # my_discount  =serializers.SerializerMethodField(read_only=True)
-    my_user_data = serializers.SerializerMethodField(read_only = True)
+    # my_user_data = serializers.SerializerMethodField(read_only = True)
     edit_url = serializers.SerializerMethodField(read_only=True)
     url = serializers.HyperlinkedIdentityField(
         view_name = 'product-detail',
@@ -29,7 +39,8 @@ class ProductSerializer(serializers.ModelSerializer):
             'content',
             'price',
             'sale_price',
-            'my_user_data',
+            # 'my_user_data',
+            # 'related_products',
             'get_discount'
         ]
 
