@@ -615,3 +615,27 @@ Step # 27:( Related Fields and foreign key serializer ) :-
  . The best approach depends on the use case and API requirements.
  . Use nested serializers when you need full details but be mindful of performance.
  . Use PrimaryKeyRelatedField for simple foreign key references to keep responses lightweight.
+
+Step # 28:( Pagination ) :- 
+
+- For adding Pagination go to the settings.py.
+- Add DEFAULT_PAGINATION_CLASS in the section of the REST_FRAMEWORK.
+- We can customize limit of items on each page with the help of pagination classes.There are different types of
+  pagination classes.
+- Types :-
+
+a.LimitOffsetPagination ; 
+  Uses limit and offset query parameters to control the number of records.
+  Query parameters:
+  limit: Number of items per page (e.g., ?limit=10).
+  offset: Number of items to skip (e.g., ?offset=20).
+
+b.CursorPagination ;
+  Query parameter: cursor.
+
+c.None (No Pagination) ;
+  If pagination is not required, you can set it to None in the settings:
+
+
+Step # 29:( A Django Based Search for our product API ) :-
+
