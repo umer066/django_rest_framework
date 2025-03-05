@@ -2,18 +2,24 @@
         
 ## INTRODUCTION :-
 
-         "Django rest framework is the sub framework of Django framework. Django framework is the most popular framework of python use in web-development. Django rest framework use to Ceate restful APIs which is use to integrate         backend with frontend. We have full control on these rest APIs as compared to third party APIs. "
+         "Django rest framework is the sub framework of Django framework. Django 
+         framework is the most popular framework of python use in web-development. 
+         Django rest framework use to Ceate restful APIs which is use to integrate        
+         backend with frontend. We have full control on these rest APIs as compared to 
+         third party APIs. "
 
 ## Important requirements in Operating system to use DRF:-
 
         -- Visual studio code (vs code) , download setup from browser and install.
-        -- Install Python , try to install latest and updated version of python,        after installation write this command to check the installated version.
+        -- Install Python , try to install latest and updated version of python,        
+        after installation write this command to check the installated version.
                    -> python --version
 
         -- Create a new folder on desktop name it drf_project. 
         -- Then open that folder in your vs code.
 
-        -- Now this step is very important, in this we have to create virtual environment and install helping tools(pips) by creating requirements.txt file.
+        -- Now this step is very important, in this we have to create virtual environment 
+        and install helping tools(pips) by creating requirements.txt file.
                  -- requirements.txt;
                         django>=4.0.0
                         djangorestframework
@@ -21,19 +27,22 @@
                         requests
                         django-cors-headers  
 
-        -- Open new terminal in vs code make sure your are using the right directory of the folder, now follow these commands in vs code terminal.
+        -- Open new terminal in vs code make sure your are using the right directory of 
+        the folder, now follow these commands in vs code terminal.
           -> Commands ;
-              >> python --version       (if show installed version, then go to next step otherwise install python)
+              >> python --version(if show installed version, then go to next 
+              step otherwise install python).
 
-              >> python -m venv myenv (use this cmd to create venv)
-              >> pip freeze (to list the latest versions of  pips) 
-              >> pip install -r requirements.txt (to install required pips) 
+              >> python -m venv myenv (use this cmd to create venv).
+              >> pip freeze (to list the latest versions of  pips).
+              >> pip install -r requirements.txt (to install required pips). 
 
 -- There are step-by-step instructions to create APIs with Django_rest_framework (drf).  
 
 Step # 01:( Installing Django framework ) :-
 
-        Python provide Django framework for web development. Use following commands to install and create the django framework.
+        Python provide Django framework for web development. Use following commands to 
+        install and create the django framework.
 
         >> pip install django
         >> django-admin --version
@@ -46,7 +55,8 @@ Step # 02:( Creating Apps in Django Framework ) :-
 
         I have created two apps in this project api and products.
 
-        Apps are the sub-project in the django which we use to create mini project in django main project for that use following commands.
+        Apps are the sub-project in the django which we use to create mini project in 
+        django main project for that use following commands.
 
          >> python manage.py startapp appname (create app in main project).
          >> ADD created app in the settings.py file in main django project.        
@@ -89,7 +99,8 @@ Step # 04:( Creating a Python API Client ) :-
 
 Step # 05:( Echo get Data ) :-
 
-        Fetching the data directly from the database. For fetching data we use request methods like get,post methods.
+        Fetching the data directly from the database. For fetching data we use request 
+        methods like get,post methods.
 
 Step # 06:(Django model instance as an API Response ) :-
 
@@ -108,12 +119,15 @@ Step # 07:( Rest Framework View and Response ) :-
 
 Step # 08:(DRF Model Serializers) :-
 
-        The serializer module in drf has the same working as froms in django. Create new file named as serializers.py in apps. Use import statement to import the serializers.   
+        The serializer module in drf has the same working as froms in django. Create new 
+        file named as serializers.py in apps. Use import statement to import the 
+        serializers.   
         >> from rest_framework import serializers
 
 Step # 09:( Ingest data with DRF views ) :-
 
-        If you want to ingest data (receive and save it) using Django Rest Framework (DRF) views, follow these steps:
+        If you want to ingest data (receive and save it) using Django Rest Framework 
+        (DRF) views, follow these steps:
 
         - Create a Model :
                Create model in the models.py in the app.
@@ -138,7 +152,8 @@ Step # 09:( Ingest data with DRF views ) :-
 
 Step # 10:( DRF Generics Retrieve APIView ) :-
 
-        In Django Rest Framework (DRF), you can use generics.RetrieveAPIView to fetch a single record from the database using its primary key (ID).
+        In Django Rest Framework (DRF), you can use generics.RetrieveAPIView to fetch a 
+        single record from the database using its primary key (ID).
 
         Key points:-
         RetrieveAPIView allows fetching a single record based on its ID.
@@ -153,7 +168,9 @@ Step # 10:( DRF Generics Retrieve APIView ) :-
 
 Step # 11:( DRF Generics CreateAPIView ) :-
 
-        In Django Rest Framework (DRF), generics.CreateAPIView is used to create new records via a POST request. It automatically handles serialization and validation.
+        In Django Rest Framework (DRF), generics.CreateAPIView is used to create new 
+        records via a POST request. It automatically handles serialization and 
+        validation.
 
         Key Points:-
         CreateAPIView handles POST requests to create new records.
@@ -162,7 +179,9 @@ Step # 11:( DRF Generics CreateAPIView ) :-
 
 Step # 12:( DRF Generics listAPIView and listCreateAPIView ) :-
 
-        In Django Rest Framework (DRF), generics.ListAPIView is used to retrieve a list of objects, while generics.ListCreateAPIView allows both retrieving and creating objects with a single view.
+        In Django Rest Framework (DRF), generics.ListAPIView is used to retrieve a list 
+        of objects, while generics.ListCreateAPIView allows both retrieving and creating
+         objects with a single view.
 
         - ListAPIView (Only Fetch Data);
              This allows only GET requests to list all products. 
@@ -179,7 +198,8 @@ Step # 12:( DRF Generics listAPIView and listCreateAPIView ) :-
 
 Step # 13:( Using function Based views for create, retrieve or list ) :-
 
-        In Django Rest Framework (DRF), you can use Function-Based Views (FBVs) along with the @api_view decorator to handle Create, Retrieve, and List operations.
+        In Django Rest Framework (DRF), you can use Function-Based Views (FBVs) along 
+        with the @api_view decorator to handle Create, Retrieve, and List operations.
 
         create_product	        POST	        Create a new product
         retrieve_product	GET	        Retrieve a single product by ID
@@ -194,7 +214,9 @@ Step # 13:( Using function Based views for create, retrieve or list ) :-
 
 Step # 14:( Update APIView and Destroy APIView ) :-
 
-        In Django Rest Framework (DRF), you can use UpdateAPIView to update an existing object and DestroyAPIView to delete an object. These are generic views that automatically handle serialization, validation, and HTTP methods.
+        In Django Rest Framework (DRF), you can use UpdateAPIView to update an existing 
+        object and DestroyAPIView to delete an object. These are generic views that 
+        automatically handle serialization, validation, and HTTP methods.
 
         - Create API View :
          > Update a product ;
@@ -219,7 +241,10 @@ Step # 14:( Update APIView and Destroy APIView ) :-
 
 Step # 15:( Mixins and a Generics APIView ) :-
 
-        In Django Rest Framework (DRF), Mixins provide reusable behavior that can be combined with Django's generic API views to create flexible and modular APIs. The GenericAPIView is a powerful base class that allows you to customize how your API works while still keeping it simple.
+        In Django Rest Framework (DRF), Mixins provide reusable behavior that can be 
+        combined with Django's generic API views to create flexible and modular APIs.
+        The GenericAPIView is a powerful base class that allows you to customize how 
+        your API works while still keeping it simple.
 
         1. List and Create API using Mixins :
                   define built-in view in views.py using 
@@ -234,18 +259,23 @@ Step # 15:( Mixins and a Generics APIView ) :-
                  Add urls of the APIView in the urls.py of the apps.
          urlpatterns = [
          path('products/', ProductListCreateView.as_view(), name='product-list-create'),
-         path('products/<int:pk>/', ProductRetrieveUpdateDestroyView.as_view(), name='product-retrieve-update-destroy'),
+         path('products/<int:pk>/', ProductRetrieveUpdateDestroyView.as_view(), 
+         name='product-retrieve-update-destroy'),
                 ]
 
         3. Why Use Mixins with GenericAPIView?
 
-         -Reusability: Mixins allow you to mix functionalities (e.g., list, create, update, delete) without rewriting code.
-         -Flexibility: Unlike generic class-based views (ListAPIView, RetrieveAPIView), GenericAPIView lets you define multiple methods in one class.
+         -Reusability: Mixins allow you to mix functionalities (e.g., list, create, 
+         update, delete) without rewriting code.
+         -Flexibility: Unlike generic class-based views (ListAPIView, RetrieveAPIView), 
+         GenericAPIView lets you define multiple methods in one class.
          - Customization: You can add custom logic inside each method.
 
 Step # 16:( Session authentication and Permissions ) :-
 
-        Django Rest Framework (DRF) provides Session Authentication to authenticate users based on Django’s built-in authentication system. It also provides permissions to restrict access to APIs based on user roles.
+        Django Rest Framework (DRF) provides Session Authentication to authenticate 
+        users based on Django’s built-in authentication system. It also provides 
+        permissions to restrict access to APIs based on user roles.
 
         Now, enable Session Authentication in settings.py:
 
@@ -257,7 +287,8 @@ Step # 16:( Session authentication and Permissions ) :-
         'rest_framework.permissions.IsAuthenticated',  # Require authentication by default
         ]
         }
-        Note: SessionAuthentication requires users to be logged in via Django’s login system (/admin/ or a custom login view).
+        Note: SessionAuthentication requires users to be logged in via Django’s login 
+        system (/admin/ or a custom login view).
 
         > Create a Custom API with Session Authentication :
                 define built-in view in views.py using permissions imports.
@@ -265,7 +296,9 @@ Step # 16:( Session authentication and Permissions ) :-
         
 Step # 17:( User and Group Permissions with Django Model Permission ) :-
 
-        Django provides a powerful user authentication and permission system, which allows you to assign permissions to individual users or groups. Model-level permissions control who can create, read, update, or delete a model’s data.
+        Django provides a powerful user authentication and permission system, which 
+        allows you to assign permissions to individual users or groups. Model-level 
+        permissions control who can create, read, update, or delete a model’s data.
 
         > Assign Permissions to Users and Groups :
             a. Using Django Admin;
@@ -276,18 +309,21 @@ Step # 17:( User and Group Permissions with Django Model Permission ) :-
          - Log into Django Admin at http://127.0.0.1:8000/admin/.
          - Go to Users & Groups:
          - Navigate to Users and assign specific permissions to individual users.
-         - Navigate to Groups, create a new group (e.g., Product Managers), and assign   model permissions. 
+         - Navigate to Groups, create a new group (e.g., Product Managers), and assign model permissions. 
 
         You can also assign permissions programmatically by write code logic separetly 
         by creating new file named as permissions.py in app.
 
 Step # 18:( Custom Permissions ) :-
 
-        Django Rest Framework (DRF) provides built-in permission classes, but sometimes you need more control over who can access what in your API. You can create custom permission classes to define specific rules.
+        Django Rest Framework (DRF) provides built-in permission classes, but sometimes 
+        you need more control over who can access what in your API. You can create 
+        custom permission classes to define specific rules.
 
         1. Creating a Custom Permission :
 
-        A custom permission class must inherit from BasePermission and override the has_permission() or has_object_permission() methods.
+        A custom permission class must inherit from BasePermission and override the 
+        has_permission() or has_object_permission() methods.
 
                - Write the code logic according to the permissions which we want to add.
                - Then define the view for permissions in views.py of the apps.
@@ -315,7 +351,9 @@ Step # 18:( Custom Permissions ) :-
         
 Step # 19:( Token Authentication ) :-
 
-        Django Rest Framework (DRF) provides Token Authentication as a way to secure APIs. With this, users receive a token after logging in, which they use in API requests instead of sending a username and password each time.
+        Django Rest Framework (DRF) provides Token Authentication as a way to secure 
+        APIs. With this, users receive a token after logging in, which they use in API 
+        requests instead of sending a username and password each time.
 
          - First, make sure Django REST Framework is installed:
              >>  pip install djangorestframework
@@ -341,7 +379,8 @@ Step # 19:( Token Authentication ) :-
          }
 
         3. Generate Authentication Tokens for Users
-         Each user needs a token to access the API. You can generate tokens manually or automatically when a user registers.
+         Each user needs a token to access the API. You can generate tokens manually or 
+         automatically when a user registers.
 
          - Option 1: Generate Token Manually.
              - Run the following command in Django Shell:
@@ -357,20 +396,27 @@ Step # 19:( Token Authentication ) :-
 
 Step # 20:( Default DRF Settings [rest_framework in settings.py]) :-
 
-        Django Rest Framework (DRF) provides default settings that control authentication, permissions, pagination, throttling, and more. You can configure these settings in your settings.py file under the REST_FRAMEWORK dictionary.
+        Django Rest Framework (DRF) provides default settings that control 
+        authentication, permissions, pagination, throttling, and more. You can 
+        configure these settings in your settings.py file under the REST_FRAMEWORK 
+        dictionary.
 
-        -- Go to the settings.py add authentication, permissions, paginations, throttlings and renderers.
+        -- Go to the settings.py add authentication, permissions, paginations,
+         throttlings and renderers.
 
          > Throttling :
 
-           In Django Rest Framework (DRF), throttling is a mechanism that limits the number of requests a client can make to an API within a specified period. It helps prevent abuse, protects resources, and ensures fair usage of the API.
+           In Django Rest Framework (DRF), throttling is a mechanism that limits the 
+           number of requests a client can make to an API within a specified period. 
+           It helps prevent abuse, protects resources, and ensures fair usage of the API.
 
          -- Types of Throttling in DRF :-
             'DRF provides different types of throttling classes.'
 
          - AnonRateThrottle – Limits requests for unauthenticated users.
          - UserRateThrottle – Limits requests for authenticated users.
-         - ScopedRateThrottle – Limits requests based on a specific scope (useful for API views with different rate limits).
+         - ScopedRateThrottle – Limits requests based on a specific scope (useful for 
+           API views with different rate limits).
          - Custom Throttling – You can create your own throttling logic by extending BaseThrottle.  
 
           > Renderers (DEFAULT_RENDERER_CLASSES):-
@@ -378,7 +424,8 @@ Step # 20:( Default DRF Settings [rest_framework in settings.py]) :-
 
 Step # 21:( Using mixins for permissions ) :-
 
-        DRF provides mixins that allow you to easily manage API permissions. By combining mixins with generic views, we can create reusable permission logic.
+        DRF provides mixins that allow you to easily manage API permissions. By combining 
+        mixins with generic views, we can create reusable permission logic.
 
         1. Why Use Mixins for Permissions?
          Using mixins allows us to:
@@ -410,15 +457,20 @@ Step # 21:( Using mixins for permissions ) :-
 
 Step # 22:( ViewSets and Routers ) :-   
 
-        In Django Rest Framework (DRF), ViewSets and Routers simplify API development by automatically handling CRUD operations and URL routing.
+        In Django Rest Framework (DRF), ViewSets and Routers simplify API development by 
+        
+        automatically handling CRUD operations and URL routing.
 
         1. What are ViewSets?
-         A ViewSet is a higher-level abstraction that combines multiple views into a single class. Instead of writing separate views for list, retrieve, create, update, and delete, you can use a ViewSet to handle them all.
+         A ViewSet is a higher-level abstraction that combines multiple views into a 
+         single class. Instead of writing separate views for list, retrieve, create, 
+         update, and delete, you can use a ViewSet to handle them all.
 
          🔹 ViewSets save time by reducing redundant code.
 
         2. What are Routers?
-         A Router automatically generates URLs for ViewSets. Instead of manually defining URLs, routers handle them dynamically.
+         A Router automatically generates URLs for ViewSets. Instead of manually defining 
+         URLs, routers handle them dynamically.
 
          🔹 Routers simplify URL management by mapping HTTP methods to ViewSet actions.
 
@@ -453,7 +505,9 @@ Step # 23:( Urls, Reverse and Serializers ) :-
 
 Step # 24:( Model serializer create and update Methods ) :- 
 
-        In Django Rest Framework (DRF), ModelSerializer provides built-in create() and update() methods that allow you to handle object creation and updates easily. You can override these methods to customize their behavior.
+        In Django Rest Framework (DRF), ModelSerializer provides built-in create() and
+        update() methods that allow you to handle object creation and updates easily.
+        You can override these methods to customize their behavior.
 
         1. Default create() and update() Methods
          By default, ModelSerializer provides these methods:
@@ -492,8 +546,45 @@ Step # 25:( Custom Validation with Serializers ) :-
          Using validators argument in fields.
 
         
-
 Step # 26:( Request User Data and Customize View Quesryset ) :- 
 
-        In Django, you can request user-specific data and customize the queryset based on the logged-in user. This is useful when you want to display only relevant data to each user, such as their own posts, orders, or profile information.
+        In Django, you can request user-specific data and customize the queryset
+        based on the logged-in user. This is useful when you want to display only 
+        relevant data to each user, such as their own posts, orders, or profile information.
 
+         - Request User Data in Views
+        Django provides the request.user object, which represents the currently 
+        logged-in user. You can use it in your views to filter querysets.
+
+        Example: Fetching User-Specific Data
+
+         - Customizing QuerySet in Class-Based Views
+        If you are using Django’s generic class-based views (CBVs), you can override 
+        get_queryset to return user-specific data.
+
+        Example: Restricting Data in ListView
+
+         - Customizing QuerySet with Django Rest Framework (DRF)
+        If you're working with Django Rest Framework (DRF), you can customize the 
+        queryset in a ViewSet.
+
+        Example: Filtering API Results by User
+
+         - Bonus: Filtering QuerySet in Admin Panel
+        If you want to show only relevant data in the Django Admin panel, override 
+        get_queryset in the admin model.
+
+Step # 27:( Related Fields and foreign key serializer ) :-        
+
+        When dealing with ForeignKey and related fields in Django Rest Framework (DRF),
+        you can serialize relationships in different ways, such as using 
+        PrimaryKeyRelatedField, StringRelatedField, Nested Serializers, or 
+        HyperlinkedRelatedField.
+
+         - Using HyperlinkedRelatedField (Hyperlinks Instead of IDs)
+         - This field provides a URL instead of an ID for related objects.
+
+        Key Points :- 
+         The best approach depends on the use case and API requirements.
+         Use nested serializers when you need full details but be mindful of performance.
+         Use PrimaryKeyRelatedField for simple foreign key references to keep responses lightweight.
