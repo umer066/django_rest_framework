@@ -147,7 +147,7 @@ REST_FRAMEWORK = {
         # "products.permissions.IsStaffEditorPermission",  # Custom permission class
     ],
 
-     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
      'PAGE_SIZE': 10,
      'DEFAULT_THROTTLE_RATES': {
         'anon': '100/day',
@@ -157,4 +157,5 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
     ),   
+
 }
