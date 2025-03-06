@@ -639,3 +639,41 @@ c.None (No Pagination) ;
 
 Step # 29:( A Django Based Search for our product API ) :-
 
+ 'You can build a Django-based search API for your product database using Django Rest Framework (DRF). 
+ Here's a step-by-step guide.'
+
+1.Setup Your Django Project (If Not Already Done):-
+
+  >> python manage.py startapp search
+
+2. Configure settings.py :-
+Add 'search' to INSTALLED_APPS.
+
+     INSTALLED_APPS = [
+      # other apps...
+      'rest_framework',
+      'products',
+     ]
+    
+3. Implement the Search API in views.py :-
+ ' Using followings import statements .'
+
+    >> from rest_framework import generics
+    >> from .models import Product
+    >> from .serializers import ProductSerializer
+
+4. Define URL Routing in urls.py :-
+
+      from django.urls import path
+      from .views import ProductSearchView
+
+     urlpatterns = [
+        path('search/', ProductSearchView.as_view(), name='product-search'),
+      ]
+
+Run the server:
+    >> python manage.py runserver
+
+Step # 30:( Building your Search Engine on Algolia ) :-
+
+
