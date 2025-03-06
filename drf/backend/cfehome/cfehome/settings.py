@@ -37,11 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party api services
+    # 'algoliasearch_django',
+
+    # third party packages
     'rest_framework',
     'rest_framework.authtoken',
+
+    # internal apps
     'api',
     'products',
-    'search',
+    'search'
 ]
 
 MIDDLEWARE = [
@@ -160,3 +167,11 @@ REST_FRAMEWORK = {
     ),   
 
 }
+
+# environment variables -> django-dotenv -> reads .env
+
+# ALGOLIA = {
+#   'APPLICATION_ID': 'HYPV6OA2XJ',
+#   'API_KEY': 'f30c6dd95d60943ea72519f0d222d800',
+#   'INDEX_PREFIX': 'cfe',
+# }

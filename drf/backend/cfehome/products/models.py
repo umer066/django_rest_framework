@@ -1,9 +1,12 @@
+import random
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
 
 
 User = settings.AUTH_USER_MODEL         # auth.User
+
+TAGS_MODEL_VALUES = ['electronics', 'boats', 'cars', 'movies', 'cameras']
 
 # Create your models here.
 
@@ -34,6 +37,20 @@ class Product(models.Model):
     public = models.BooleanField(default=True)
 
     objects = ProductManager()
+
+    @property
+    def path(self):
+        return f"/products/{self.pk}/"
+
+    @property 
+    def body(self):
+        return self.content
+
+    def is_public(self) -> bool:
+        return self.public   # True or False
+
+    def get_tags_list(self):
+        return [random.choice(TAGS_MODEL_VALUES)]
 
     @property
     def sale_price(self):   
