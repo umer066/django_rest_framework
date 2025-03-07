@@ -802,3 +802,32 @@ python -m http.server 8111(port)
 
 **Step # 35: Handle Request Blocked by CORS via django-cors-headers**
 
+- *First of all install package django-cors-headers for handle cors request in javascript. Use command;*
+```python
+pip install -r requirements.txt
+```
+
+- *Include corsheaders in Installed_apps in `settings.py` by writting;*
+```python
+'corsheaders',
+```
+- *To allow cors headers in js need to add middleware in `settings.py` above the commonMiddleware in 
+   Middleware section. Just like that.*
+```python
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    
+    'corsheaders.middleware.CorsMiddleware', # here add middleware
+
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+```
+- *To access the cors header from different locations/apis add the urls in allowed hosts in `settings.py`.* 
+
+**Step # 36: Using JWT With JS Client**
+
