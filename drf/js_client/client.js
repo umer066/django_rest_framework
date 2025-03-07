@@ -3,10 +3,10 @@ const baseEndpoint = "http://localhost:8000/api"
 
 if (loginForm) {
     // handle this login form
-    loginForm.addEventListener('submit', handleLogin)
+    loginForm.addEventListener('submit', handlelogin)
 }
 
-function handleLogin(event) {
+function handlelogin(event) {
     console.log(event)
     event.preventDefault()
     const loginEndpoint = '${baseEndpoint}/token/'
@@ -16,9 +16,9 @@ function handleLogin(event) {
     console.log(loginObjectData, bodyStr  )
     // console.log(loginObjectData)
     const options = {
-        method: "POST",
+        method: "post",
         headers : { 
-            "ContentType" : "application/json"
+            "Content-Type" : "application/json"
         },
         body : bodyStr
     }   
@@ -27,7 +27,7 @@ function handleLogin(event) {
         console.log(response)
         return response.json()
     })
-    .then( x =>{
+    .then(x =>{
         console.log(x)
     })
     .catch(err=>{
