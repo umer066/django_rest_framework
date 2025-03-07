@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import datetime
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     # third party packages
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
 
     # internal apps
     'api',
@@ -136,10 +138,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # auth_classes = [
 #         "rest_framework.authentication.SessionAuthentication",
-#         "api.authentication.TokenAuthentication"
+#          "rest_framework_simplejwt.authentication.JWTAuthentication",
+#          "api.authentication.TokenAuthentication"
 #     ]
 # if DEBUG:
 #     auth_classes = [
+#         "rest_framework_simplejwt.authentication.JWTAuthentication",
 #         "api.authentication.TokenAuthentication"
 #     ]
 
@@ -147,7 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
-        "api.authentication.TokenAuthentication"
+         "rest_framework_simplejwt.authentication.JWTAuthentication",
+         "api.authentication.TokenAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",  # Uncomment to allow only GET requests for unauthenticated users
@@ -175,3 +180,9 @@ REST_FRAMEWORK = {
 #   'API_KEY': 'f30c6dd95d60943ea72519f0d222d800',
 #   'INDEX_PREFIX': 'cfe',
 # }
+
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES":["Bearer"],
+    "ACCESS_TOKEN_LIFETIME":datetime.timedelta(seconds=30),   # hours=3
+    "REFRESH_TOKEN_LIFETIME":datetime.timedelta(minutes=1),   # day = 1 
+}
