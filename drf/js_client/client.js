@@ -1,3 +1,4 @@
+const contentContainer = document.getElementById("content-container")
 const loginForm = document.getElementById("login-form")
 const baseEndpoint = "http://localhost:8000/api"
 
@@ -7,7 +8,6 @@ if (loginForm) {
 }
 
 function handlelogin(event) {
-    console.log(event)
     event.preventDefault()
     const loginEndpoint = '${baseEndpoint}/token/'
     let loginFormData = new FormData(loginForm)
@@ -16,7 +16,7 @@ function handlelogin(event) {
     console.log(loginObjectData, bodyStr  )
     // console.log(loginObjectData)
     const options = {
-        method: "post",
+        method: "POST",
         headers : { 
             "Content-Type" : "application/json"
         },
@@ -24,13 +24,63 @@ function handlelogin(event) {
     }   
     fetch(loginEndpoint, options) // promise
     .then(response=>{
-        console.log(response)
         return response.json()
     })
-    .then(x =>{
-        console.log(x)
+    .then(authData => {
+        handleAuthData(authData, getProductList)
     })
     .catch(err=>{
         console.log('err', err)
     })
 }
+
+function handleAuthData(authData, callback) {
+    localStorage.setItem('access', authData.access) 
+    localStorage.setItem('refresh', authData.refresh)
+    if (callback) {
+        callback()
+    }
+}
+
+function writeToContainer(data) {
+    if (contentContainer) {
+        contentContainer.innerHTML = "<pre>" + JSON.stringify(data) + "</pre>"
+    }
+}
+
+function getFetchOptions(method, body){
+     return {
+        method : method === null ? "GET": method,
+        headers : {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer abc ${localStorage.getItem('access')}`
+        },
+        body: body ? body : null 
+    } 
+}
+
+function isTokenNotValid(jsonData){
+    if (jsonData.code && jsonData.code === "token_not_valid"){
+        // run a refresh token fetch
+        alert("Please logon again")
+        return false
+    }
+    return true
+}
+
+function getProductList(){
+    const endpoint = `${baseEndpoint}/products/`
+    const options = getFetchOptions()
+    fetch (endpoint, options)
+    .then (response => {
+        return response.json()
+    })
+    .then(data => {
+        const validData = isTokenNotValid(data)
+        if (validData) {
+            writeToContainer(data)
+        }
+    })
+}
+
+getProductList()

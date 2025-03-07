@@ -831,3 +831,7 @@ MIDDLEWARE = [
 
 **Step # 36: Using JWT With JS Client**
 
+- *Add few additions in `client.js`.* 
+
+**Step # 37: Search via Rest Api and JS Client**
+
