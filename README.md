@@ -776,6 +776,25 @@ from algoliasearch_django import AlgoliaIndex
 
 ---  
 
-**Step # 33: Algolia Search Client for Django**  
+**Step # 33: Json web token Authentication with simplejwt**
 
-(Same as Step #31)
+- Go to Python JWT Client for DRF  web site copy the client side code and create new file in `py_client` 
+ named as `jwt.py` and paste all the code in it.
+
+- Add the drf jwt in settings.py in installed apps.
+- To use jwt install the package in drf named as;
+   > djangorestframework-simplejwt
+
+- To view Token response go to the (jwt.io) and paste your taken.
+- The sequences matters when authenticated the drf token in `settings.py`.
+
+**Step # 34: Login via JavaScript Client**
+
+- Create new folder named as `js-client` add two files `index.html` to create login form and `js.client` for
+  form functionality using javascript to post form data in database (db).
+
+- To run JavaScript Server;
+     >> python -m http.server 8111(port)
+
+**Step # 35: Handle Request Blocked by CORS via django-cors-headers**
+
