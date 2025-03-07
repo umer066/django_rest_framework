@@ -1,13 +1,19 @@
 const contentContainer = document.getElementById("content-container")
 const loginForm = document.getElementById("login-form")
+const searchForm = document.getElementById("search-form")
 const baseEndpoint = "http://localhost:8000/api"
 
 if (loginForm) {
     // handle this login form
-    loginForm.addEventListener('submit', handlelogin)
+    loginForm.addEventListener('submit', handleLogin)
 }
 
-function handlelogin(event) {
+if (searchForm) {
+    // handle this login form
+    searchForm.addEventListener('submit', handleSearch)
+}
+
+function handleLogin(event) {
     event.preventDefault()
     const loginEndpoint = '${baseEndpoint}/token/'
     let loginFormData = new FormData(loginForm)
@@ -22,6 +28,8 @@ function handlelogin(event) {
         },
         body : bodyStr
     }   
+
+
     fetch(loginEndpoint, options) // promise
     .then(response=>{
         return response.json()
