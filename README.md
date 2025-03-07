@@ -783,8 +783,10 @@ from algoliasearch_django import AlgoliaIndex
 
 - Add the drf jwt in settings.py in installed apps.
 - To use jwt install the package in drf named as;
-   > djangorestframework-simplejwt
 
+```python
+djangorestframework-simplejwt
+```
 - To view Token response go to the (jwt.io) and paste your taken.
 - The sequences matters when authenticated the drf token in `settings.py`.
 
@@ -794,7 +796,9 @@ from algoliasearch_django import AlgoliaIndex
   form functionality using javascript to post form data in database (db).
 
 - To run JavaScript Server;
-     >> python -m http.server 8111(port)
+```python
+python -m http.server 8111(port)
+```
 
 **Step # 35: Handle Request Blocked by CORS via django-cors-headers**
 
