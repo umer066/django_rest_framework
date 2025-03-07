@@ -676,4 +676,22 @@ Run the server:
 
 Step # 30:( Building your Search Engine on Algolia ) :-
 
+ 'Algolia provides the third party api that we integrate in our code.'
+ 'Login to the Algolia and then select django framework. '
+ 'For integration first of all we have to install algolia package in django project.'
+ 'Adding attributes in settings.py and add the prefix of the app/models.'
+ 'Creating the index.py file in each of the app which we want to connect with algolia. Then use the import 
+  statement to use algolia package.'
+        >> from algoliasearch_django import AlgoliaIndex
 
+Step # 31:( Algolia Search Client for Django ) :-
+
+ 'Create new file named as client.py in search app create code logic in it using class / methods.'
+ 'Create view in views.py.'
+
+Step # 32:( Unified Design of Serializers and Indices ) :-
+
+ 'Arrange the view of fields means display the fields only which we want to show for view to user. And hide 
+  the fields which we don't want show to user.'
+
+Step # 33:( Algolia Search Client for Django ) :-

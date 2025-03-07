@@ -27,6 +27,7 @@ class ProductSerializer(serializers.ModelSerializer):
     title = serializers.CharField(validators=[validators.validate_title_no_hello, validators.unique_product_title ])
     name = serializers.CharField(source='title', read_only = True)
     # email = serializers.EmailField(source='user.email', read_only = True) #for email reference
+    body = serializers.CharField(source='content')
     class Meta:
         model = Product
         fields = [
@@ -43,6 +44,7 @@ class ProductSerializer(serializers.ModelSerializer):
             # 'related_products',
             'get_discount',
             'public',
+            'path',
         ]
 
     def get_my_user_data(self, obj):
